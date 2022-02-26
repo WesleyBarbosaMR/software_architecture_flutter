@@ -1,3 +1,4 @@
+// * Interface to get local storage
 abstract class ILocalStorage {
   Future get(String key);
   Future delete(String key);
