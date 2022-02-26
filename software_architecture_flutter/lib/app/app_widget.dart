@@ -10,14 +10,14 @@ class AppWidget extends StatelessWidget {
     // * Listen singleton and modify app-wide view state
     return ValueListenableBuilder<bool>(
         valueListenable: AppController.instance.themeSwitch,
-        builder: (context, isDart, child) {
+        builder: (context, isDark, child) {
           return MaterialApp(
             title: 'Flutter Demo',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               primarySwatch: Colors.lime,
               visualDensity: VisualDensity.adaptivePlatformDensity,
-              brightness: isDart ? Brightness.dark : Brightness.light,
+              brightness: isDark ? Brightness.dark : Brightness.light,
             ),
             home: HomePage(),
           );

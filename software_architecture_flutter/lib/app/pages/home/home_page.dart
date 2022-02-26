@@ -3,7 +3,7 @@ import 'package:test_api/test_api.dart';
 import 'package:http/http.dart';
 
 import 'package:flutter/material.dart';
-import 'package:software_architecture_flutter/app/components/custom_switch_widget.dart';
+import 'package:software_architecture_flutter/app/pages/home/components/custom_switch_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
