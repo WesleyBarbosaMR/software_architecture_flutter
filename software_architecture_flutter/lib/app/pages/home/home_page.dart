@@ -1,4 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:software_architecture_flutter/app/models/apiAdvisor_model.dart';
+import 'package:software_architecture_flutter/app/pages/home/controllers/home_controller.dart';
+import 'package:software_architecture_flutter/app/repositories/apiAdvisor_repository.dart';
+import 'package:software_architecture_flutter/app/services/client_http_service.dart';
+import 'package:software_architecture_flutter/app/viewmodels/apiAdvisor_viewmodel.dart';
 import 'package:test_api/test_api.dart';
 import 'package:http/http.dart';
 
@@ -13,6 +18,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final controller = HomeController(
+    ApiAdvisorViewModel(
+      ApiAdvisorRepository(
+        ClientHttpService(),
+      ),
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return /*SingleChildScrollView(
@@ -23,8 +36,27 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.wb_sunny_rounded),
+          onPressed: () {
+            controller.getWeather();
+          }),
       body: Center(
-        child: CustomSwitchWidget(),
+        child: Column(
+          children: [
+            CustomSwitchWidget(),
+            ValueListenableBuilder<ApiAdvisorModel?>(
+                valueListenable: controller.weather,
+                builder: (context, model, child) {
+                  if (model?.text == null) {
+                    return Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                  return Text(model.toString());
+                })
+          ],
+        ),
       ),
       //),
     );
