@@ -31,16 +31,18 @@ dependencies:
   dio: ^4.0.4
   flutter:
     sdk: flutter
+  flutter_modular: ^3.4.1+1
+  flutter_modular_test: ^1.0.4
   flutter_test_ui: ^2.0.0
   http: ^0.13.4
   shared_preferences: ^2.0.13
   test_api: ^0.4.8
 
 dev_dependencies:
-  mockito: ^5.1.0
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+  mockito: ^5.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:software_architecture_flutter/app/controllers/app_controller.dart';
 import 'package:software_architecture_flutter/app/pages/home/home_page.dart';
 
@@ -10,7 +11,7 @@ class AppWidget extends StatelessWidget {
     // * Listen singleton and modify app-wide view state
     return ValueListenableBuilder<bool>(
         // * Check the current instance of the AppController to build the screen
-        valueListenable: AppController.instance.themeSwitch,
+        valueListenable: Modular.get<AppController>().themeSwitch,
         // * Building the screen according to the current instance of the AppController
         builder: (context, isDark, child) {
           return MaterialApp(

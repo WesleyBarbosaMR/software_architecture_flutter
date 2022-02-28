@@ -3,6 +3,7 @@ import 'package:software_architecture_flutter/app/services/shared_local_storage_
 import 'package:software_architecture_flutter/app/viewmodels/change_theme_viewmodel.dart';
 
 class AppController {
+  /*
   // * Create a controller to modify app-wide view state
 
   // * Creating a Singleton to ensure that a class has only one instance of itself
@@ -18,6 +19,12 @@ class AppController {
   // * through the interface to securely poll past changes
   final ChangeThemeViewmodel changeThemeViewmodel =
       ChangeThemeViewmodel(SharedLocalStorageService());
+  */
+  final ChangeThemeViewmodel changeThemeViewmodel;
+
+  AppController(this.changeThemeViewmodel) {
+    changeThemeViewmodel.init();
+  }
 
   bool get isDark => changeThemeViewmodel.config.themeSwitch.value;
   ValueNotifier<bool> get themeSwitch =>

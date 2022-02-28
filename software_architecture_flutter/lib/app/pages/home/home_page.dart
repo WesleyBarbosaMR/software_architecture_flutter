@@ -1,3 +1,4 @@
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:software_architecture_flutter/app/models/apiAdvisor_model.dart';
 import 'package:software_architecture_flutter/app/pages/home/controllers/home_controller.dart';
@@ -18,13 +19,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final controller = HomeController(
-    ApiAdvisorViewModel(
-      ApiAdvisorRepository(
-        ClientHttpService(),
-      ),
-    ),
-  );
+  final controller = Modular.get<HomeController>();
 
   @override
   Widget build(BuildContext context) {
