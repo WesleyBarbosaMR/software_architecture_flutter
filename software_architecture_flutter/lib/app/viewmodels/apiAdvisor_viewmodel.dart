@@ -10,6 +10,8 @@ class ApiAdvisorViewModel {
   ApiAdvisorViewModel(this.repository);
 
   fill() async {
-    apiAdvisorModel.value = await repository.getWeather();
+    try {
+      apiAdvisorModel.value = await repository.getWeather();
+    } catch (e) {}
   }
 }

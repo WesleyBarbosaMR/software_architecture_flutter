@@ -8,7 +8,7 @@ class ClientHttpService implements IClientHttp {
   void addToken(String token) {}
 
   @override
-  Future get(String url) async {
+  Future? get(String url) async {
     var response = await dio.get(url);
     return response.data;
   }

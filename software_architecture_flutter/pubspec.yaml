@@ -37,6 +37,7 @@ dependencies:
   test_api: ^0.4.8
 
 dev_dependencies:
+  mockito: ^5.1.0
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
