@@ -1,15 +1,15 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:software_architecture_flutter/app/models/apiAdvisor_model.dart';
-import 'package:software_architecture_flutter/app/pages/home/controllers/home_controller.dart';
-import 'package:software_architecture_flutter/app/repositories/apiAdvisor_repository.dart';
-import 'package:software_architecture_flutter/app/services/client_http_service.dart';
-import 'package:software_architecture_flutter/app/viewmodels/apiAdvisor_viewmodel.dart';
+import 'package:software_architecture_flutter/app/modules/home/models/apiAdvisor_model.dart';
+import 'package:software_architecture_flutter/app/modules/home/controllers/home_controller.dart';
+import 'package:software_architecture_flutter/app/modules/home/repositories/apiAdvisor_repository.dart';
+import 'package:software_architecture_flutter/app/core/services/client_http_service.dart';
+import 'package:software_architecture_flutter/app/modules/home/viewmodels/apiAdvisor_viewmodel.dart';
 import 'package:test_api/test_api.dart';
 import 'package:http/http.dart';
 
 import 'package:flutter/material.dart';
-import 'package:software_architecture_flutter/app/pages/home/components/custom_switch_widget.dart';
+import 'package:software_architecture_flutter/app/modules/home/components/custom_switch_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

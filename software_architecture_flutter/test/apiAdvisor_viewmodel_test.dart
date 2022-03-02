@@ -5,11 +5,12 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:software_architecture_flutter/app/app_module.dart';
-import 'package:software_architecture_flutter/app/interfaces/client_http_interface.dart';
-import 'package:software_architecture_flutter/app/models/apiAdvisor_model.dart';
-import 'package:software_architecture_flutter/app/repositories/apiAdvisor_repository.dart';
-import 'package:software_architecture_flutter/app/services/client_http_service.dart';
-import 'package:software_architecture_flutter/app/viewmodels/apiAdvisor_viewmodel.dart';
+import 'package:software_architecture_flutter/app/core/interfaces/client_http_interface.dart';
+import 'package:software_architecture_flutter/app/modules/home/home_module.dart';
+import 'package:software_architecture_flutter/app/modules/home/models/apiAdvisor_model.dart';
+import 'package:software_architecture_flutter/app/modules/home/repositories/apiAdvisor_repository.dart';
+import 'package:software_architecture_flutter/app/core/services/client_http_service.dart';
+import 'package:software_architecture_flutter/app/modules/home/viewmodels/apiAdvisor_viewmodel.dart';
 
 class ClientHttpMockito extends Mock implements IClientHttp {}
 
@@ -20,6 +21,7 @@ main() {
   initModule(AppModule(), replaceBinds: [
     Bind<IClientHttp>((i) => ClientHttpMockito()),
   ]);
+  initModule(HomeModule());
   /*
   final mock = ClientHttpMockito();
 

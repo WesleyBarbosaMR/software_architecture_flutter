@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:software_architecture_flutter/app/interfaces/client_http_interface.dart';
+import 'package:software_architecture_flutter/app/core/interfaces/client_http_interface.dart';
 
 class ClientHttpService implements IClientHttp {
   final Dio dio = Dio();

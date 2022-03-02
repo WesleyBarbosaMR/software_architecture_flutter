@@ -1,6 +1,6 @@
-import 'package:software_architecture_flutter/app/models/apiAdvisor_model.dart';
+import 'package:software_architecture_flutter/app/modules/home/models/apiAdvisor_model.dart';
 import 'package:flutter/foundation.dart';
-import 'package:software_architecture_flutter/app/repositories/apiAdvisor_repository_interface.dart';
+import 'package:software_architecture_flutter/app/modules/home/repositories/apiAdvisor_repository_interface.dart';
 
 class ApiAdvisorViewModel {
   final IApiAdvisor repository;

@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:software_architecture_flutter/app/interfaces/local_storage_interface.dart';
+import 'package:software_architecture_flutter/app/core/interfaces/local_storage_interface.dart';
 
 class SharedLocalStorageService implements ILocalStorage {
   @override

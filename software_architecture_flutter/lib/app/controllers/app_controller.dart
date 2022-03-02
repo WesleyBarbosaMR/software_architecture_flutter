@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:software_architecture_flutter/app/services/shared_local_storage_service.dart';
-import 'package:software_architecture_flutter/app/viewmodels/change_theme_viewmodel.dart';
+import 'package:software_architecture_flutter/app/core/viewmodels/change_theme_viewmodel.dart';
 
 class AppController {
   /*
