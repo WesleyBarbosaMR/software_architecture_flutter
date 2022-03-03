@@ -1,2 +1,3 @@
 # software_architecture_flutter
- Studying software architecture with flutter
+#### Same app as the main branch, but using package orientation.
+###### *Only recommended for use in highly complex apps cases.
