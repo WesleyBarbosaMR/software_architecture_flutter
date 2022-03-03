@@ -1,7 +1,7 @@
+import 'package:core_module/core_module.dart' show ChangeThemeViewmodel;
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:software_architecture_flutter/app/controllers/app_controller.dart';
-import 'package:software_architecture_flutter/app/modules/home/home_page.dart';
+import 'package:home_module/home_module.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -11,7 +11,7 @@ class AppWidget extends StatelessWidget {
     // * Listen singleton and modify app-wide view state
     return ValueListenableBuilder<bool>(
         // * Check the current instance of the AppController to build the screen
-        valueListenable: Modular.get<AppController>().themeSwitch,
+        valueListenable: Modular.get<ChangeThemeViewmodel>().config.themeSwitch,
         // * Building the screen according to the current instance of the AppController
         builder: (context, isDark, child) {
           return MaterialApp(

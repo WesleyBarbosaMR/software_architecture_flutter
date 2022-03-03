@@ -1,5 +1,5 @@
-import 'package:software_architecture_flutter/app/core/interfaces/local_storage_interface.dart';
-import 'package:software_architecture_flutter/app/core/models/appConfig_model.dart';
+import 'package:core_module/src/interfaces/local_storage_interface.dart';
+import 'package:core_module/src/models/appConfig_model.dart';
 
 class ChangeThemeViewmodel {
   // * Access local storage through a constructor

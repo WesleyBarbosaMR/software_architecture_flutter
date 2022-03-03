@@ -28,15 +28,17 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
-  dio: ^4.0.4
+  core_module:
+    path: modules/core_module
+  home_module:
+    path: modules/home_module
   flutter:
     sdk: flutter
   flutter_modular: ^3.4.1+1
   flutter_modular_test: ^1.0.4
   flutter_test_ui: ^2.0.0
-  http: ^0.13.4
-  shared_preferences: ^2.0.13
   test_api: ^0.4.8
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_lints: ^1.0.0

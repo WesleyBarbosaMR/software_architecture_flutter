@@ -1,26 +1,33 @@
+import 'package:core_module/core_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_modular_test/flutter_modular_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:home_module/src/home_module.dart';
+import 'package:home_module/src/models/apiAdvisor_model.dart';
+import 'package:home_module/src/viewmodels/apiAdvisor_viewmodel.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:software_architecture_flutter/app/app_module.dart';
-import 'package:software_architecture_flutter/app/core/interfaces/client_http_interface.dart';
-import 'package:software_architecture_flutter/app/modules/home/home_module.dart';
-import 'package:software_architecture_flutter/app/modules/home/models/apiAdvisor_model.dart';
-import 'package:software_architecture_flutter/app/modules/home/repositories/apiAdvisor_repository.dart';
-import 'package:software_architecture_flutter/app/core/services/client_http_service.dart';
-import 'package:software_architecture_flutter/app/modules/home/viewmodels/apiAdvisor_viewmodel.dart';
 
 class ClientHttpMockito extends Mock implements IClientHttp {}
+
+class ModuleMock extends Module {
+  @override
+  List<Bind> get binds {
+    return [
+      Bind<IClientHttp>((i) => ClientHttpMockito()),
+    ];
+  }
+
+  @override
+  List<Router> get routers => [];
+}
 
 main() {
   WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences.setMockInitialValues({});
 
-  initModule(AppModule(), replaceBinds: [
-    Bind<IClientHttp>((i) => ClientHttpMockito()),
-  ]);
+  initModule(ModuleMock());
   initModule(HomeModule());
   /*
   final mock = ClientHttpMockito();
