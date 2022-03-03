@@ -1,2 +1,2 @@
 # software_architecture_flutter
- Studying software architecture with flutter
+### A simple app to exercise software architecture concepts and improve my code structure.
